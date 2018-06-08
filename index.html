@@ -10,19 +10,44 @@
 	
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
+	<link rel="stylesheet" type="text/css" href="./style.css">
+
 	<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
 	<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
 	
 </head>
 <body>
-OK?
-<div id="map" style="height: 400px; width: 600px"></div>
+	<header>
+		<h1>Copenhagen Wheel Visualization</h1>
+	</header>
+	<div id="main">	
+		<div id="map" style="height: 400px; width: 600px"></div>
+		<div id="controls">
+			<h3>Available Routes</h3>
+			<ul id="buttons">
+				<li class="btn-item">
+					<button class="btn" onclick="getMapData('./testing-the-wheel.geojson')">Trying the Wheel Around the Block</button>
+				</li>	
+				<li class="btn-item">
+					<button class="btn" onclick="getMapData('./unpredictable-individual-points.geojson')">Daily Commute 1</button>
+				</li>	
+				<li class="btn-item">
+					<button class="btn" onclick="getMapData('./matt-home-commute.geojson')">Matt Home Commute</button>
+				</li>	
+				<li class="btn-item">
+					<button class="btn" onclick="getMapData('./matt-to-work-commute.geojson')">Matt Work Commute</button>
+				</li>	
+				<li class="btn-item">
+					<button class="btn" onclick="getMapData('./wrong-way-home.geojson')">Wrong Way Home</button>
+				</li>	
+			</ul>
+			<h3>Statistics</h3>
+			<ul id='stats'>
+				<li>thing</li>
+			</ul>
+		</div>
+	</div>
 
-<button onclick="getMapData('./testing-the-wheel.geojson')">Trying the Wheel Around the Block</button>
-<button onclick="getMapData('./unpredictable-individual-points.geojson')">Daily Commute 1</button>
-<button onclick="getMapData('./matt-home-commute.geojson')">Matt Home Commute</button>
-<button onclick="getMapData('./matt-to-work-commute.geojson')">Matt Work Commute</button>
-<button onclick="getMapData('./wrong-way-home.geojson')">Wrong Way Home</button>
 
 <script type="text/javascript" src="./app.js"></script>
 

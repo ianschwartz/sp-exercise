@@ -1,0 +1,16 @@
+header {
+	text-align: center;
+	background: lightblue;
+	margin: 0 0 25px 0;
+	width: 100%;
+}
+#main {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	#controls{
+		ul {
+			list-style: none;
+		}
+	}
+}
