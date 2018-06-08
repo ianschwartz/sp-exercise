@@ -1,0 +1,13 @@
+{
+  "name": "exercise",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ian Schwartz <hankpiece@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.1.0"
+  },
+  "scripts": {
+  	"test": "jest"
+  }
+}

@@ -8,7 +8,6 @@
 			React's state management works to minimize side effects. In the end I chose
 			to use vanilla JS.
 */
-
 const token = "pk.eyJ1IjoiaWFuc2Nod2FydHoiLCJhIjoiY2ppM2p5MHpvMW11bjNrbncwb2JhdndwcCJ9.RGFucrA0HIuQo5Z988V-wg";
 L.mapbox.accessToken = token;
 
@@ -33,7 +32,7 @@ function Trip(geojson, url) {
 	this.featureLayer.eachLayer((layer) => {
 		let properties = layer.feature.properties
 		let content = `
-			<h2>${formateTimeStamp(properties.time)}</h2>
+			<h2>${formatTimeStamp(properties.time)}</h2>
 			<ul>
 				<li>Speed: ${roundToTwoDecimals(properties.wheelData.speed)}kph</l1>
 				<li>Altitude ${roundToTwoDecimals(properties.sensorData.phone.altitude)}meters</li>
@@ -59,22 +58,6 @@ function Trip(geojson, url) {
 	}});
 
 	this.layers = [this.featureLayer, this.temperatureHeatMapLayer, this.torqueLayer];
-}
-
-// helper methods
-function fc(array) {
-	// The geoJSON data received from the wheel is in the Long/Lat format
-	// , but Mapbox expects Lat/Long. This function reverses them.
-	return [array[1], array[0]];
-}
-
-function roundToTwoDecimals(num) { // the wheel gives very precise numbers... Too precise for humans
-	return Math.round(num * 100) / 100;
-}
-
-function formateTimeStamp(time) { // makes timestamps more readable for humans
-	let newTime = new Date(time);
-	return newTime.toLocaleString();
 }
 
 // The following functions interact with the state of our Map object.
@@ -153,5 +136,20 @@ function getMapData(url) {
 		trips.push(trip);
 		activateLayer(id, "featureLayer");
 		listTrips();
-	}).catch(error => console.log('Error:', error))
+	}).catch(error => console.log('Error:', error));
+}
+
+/* 
+	Full disclosure:
+		Because I was using an external library, and because of time limitations,
+		I couldn't figure out how to write tests on functions that interact with 
+		the MapBox/Leaflet library.
+
+		The following exports are for testing in Jest.
+
+*/
+exports = {
+	fc: fc,
+	roundToTwoDecimals: roundToTwoDecimals,
+	formatTimeStamp: formatTimeStamp
 }
