@@ -5,10 +5,14 @@ header {
 	width: 100%;
 }
 #main {
+	height: 100%;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	#controls{
+		#map {
+			flex-grow: 2;
+		}
 		ul {
 			list-style: none;
 		}

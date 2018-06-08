@@ -6,9 +6,13 @@ header {
 }
 
 #main {
+  height: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+#main #controls #map {
+  flex-grow: 2;
 }
 #main #controls ul {
   list-style: none;
