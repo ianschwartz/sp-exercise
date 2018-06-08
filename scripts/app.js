@@ -98,20 +98,14 @@ function listTrips() {
 			<h4>${trip.tripID}</h4>
 			<div>
 				<button class="list-control" onclick="activateLayer(${index}, 'featureLayer')">Show DataPoints</button>
-			</div>
-			<div>
 				<button class="list-control" onclick="removeLayer(${index}, 'featureLayer')">Remove DataPoints</button>
 			</div>
 			<div>
 				<button class="list-control" onclick="activateLayer(${index}, 'temperatureHeatMapLayer')">Show Motor Temperature</button>
-			</div>
-			<div>
 				<button class="list-control" onclick="removeLayer(${index}, 'temperatureHeatMapLayer')">Remove Motor Temperature</button>
 			</div>
 			<div>
 				<button class="list-control" onclick="activateLayer(${index}, 'torqueLayer')">Show Torque </button>
-			</div>
-			<div>
 				<button class="list-control" onclick="removeLayer(${index}, 'torqueLayer')">Remove Torque</button>
 		</div></
 		li>`
