@@ -9,54 +9,67 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
-	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" type="text/css" href="./styles/style.css">
 
 	<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
 	<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
-	<script type="text/javascript" src="./leaflet-heat.js"></script>
+	<script type="text/javascript" src="./scripts/leaflet-heat.js"></script>
 	
 </head>
 <body>
 	<header>
-		<h1>Copenhagen Wheel Visualization</h1>
+		<div id="brand">
+			superpedestrian
+		</div>
+		<nav>
+			<a href="#">TECH</a>
+			<a href="#">BIKES</a>
+			<a href="#">TRY</a>
+			<a href="#">SUPPORT</a>
+			<a href="#">BLOG</a>
+			<a href="#">CART</a>
+			<a href="#">LOGIN</a>
+		</nav>
 	</header>
+
 	<div id="main">	
 		<div id="map" style="height:400px; width: 600px;"></div>
+	</div>
+
+	<div id="controls">
 		<div id="trips-container">
 			<h3>My Trips</h3>
 			<ul id="trips">
 
 			</ul>
 		</div>
-	</div>
-
-	<div>
-		<h3>Available Routes</h3>
+		<div id="routes-container">
+			<h3>Available Routes</h3>
 			<ul id="buttons">
 				<li class="btn-item">
-					<button class="btn" onclick="getMapData('./testing-the-wheel.geojson')">Trying the Wheel Around the Block</button>
+					<button class="btn" onclick="getMapData('./data/testing-the-wheel.geojson')">Trying the Wheel Around the Block</button>
 				</li>	
 				<li class="btn-item">
-					<button class="btn" onclick="getMapData('./unpredictable-individual-points.geojson')">Daily Commute 1</button>
+					<button class="btn" onclick="getMapData('./data/unpredictable-individual-points.geojson')">Daily Commute 1</button>
 				</li>	
 				<li class="btn-item">
-					<button class="btn" onclick="getMapData('./matt-home-commute.geojson')">Matt Home Commute</button>
+					<button class="btn" onclick="getMapData('./data/matt-home-commute.geojson')">Matt Home Commute</button>
 				</li>	
 				<li class="btn-item">
-					<button class="btn" onclick="getMapData('./matt-to-work-commute.geojson')">Matt Work Commute</button>
+					<button class="btn" onclick="getMapData('./data/matt-to-work-commute.geojson')">Matt Work Commute</button>
 				</li>	
 				<li class="btn-item">
-					<button class="btn" onclick="getMapData('./wrong-way-home.geojson')">Wrong Way Home</button>
+					<button class="btn" onclick="getMapData('./data/wrong-way-home.geojson')">Wrong Way Home</button>
 				</li>	
 				<li class="btn-item">
-					<button class="btn" onclick="getMapData('./30-miles-points.geojson')">Long Weekend Trip</button>
+					<button class="btn" onclick="getMapData('./data/30-miles-points.geojson')">Long Weekend Trip</button>
 				</li>	
 			</ul>
+		</div>
 	</div>
 
-<script type="text/javascript" src="./helpers.js"></script>
-<script type="text/javascript" src="./app.js"></script>
+<script type="text/javascript" src="./scripts/helpers.js"></script>
+<script type="text/javascript" src="./scripts/app.js"></script>
 
 
 </body>

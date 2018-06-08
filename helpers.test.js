@@ -1,4 +1,4 @@
-const helpers = require('./helpers');
+const helpers = require('./scripts/helpers');
 
 test('reverses latitude and longitude', () => {
   expect(helpers.fc([42.360082, -71.058880])).toEqual([-71.058880, 42.360082]);

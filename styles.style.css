@@ -1,8 +1,8 @@
 header {
   text-align: center;
-  background: lightblue;
   margin: 0 0 25px 0;
   width: 100%;
+  display: flex;
 }
 
 #main {
@@ -14,9 +14,5 @@ header {
 #main #controls ul {
   list-style: none;
 }
-#main #controls ul li {
-  display: flex;
-  flex-direction: column;
-}
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=styles.style.css.map */
